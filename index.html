@@ -35,7 +35,60 @@
 			</div>
 			<a href="tutorials.html">Tutorials</a>
 		</div>
-		<h1>Coming soon...</h1>
-		<h2>Most pages don't exist yet.</h2>
+		<h1>Note, this site is very incomplete.</h1>
+		<h1>Featured Mods</h1>
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 5</div>
+				<a href="mods/chwt.html"><img src="images/chwt.jpg" style="width:100%"></a>
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 5</div>
+				<a href="mods/rockband.html"><img src="images/rockband.jpg" style="width:100%"></a>
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 5</div>
+				<a href="mods/gh2.html"><img src="images/gh2.jpg" style="width:100%"></a>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">4 / 5</div>
+				<a href="mods/gh3.html"><img src="images/gh3.jpg" style="width:100%"></a>
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">5 / 5</div>
+				<a href="mods/doodlehero.html"><img src="images/doodlehero.jpg" style="width:100%"></a>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+			<span class="dot" onclick="currentSlide(5)"></span>
+		</div>
+		<script>
+			let slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+				setTimeout(showSlides, 4000); // Change image every 2 seconds
+			}
+		</script>
 	</body>
 </html>
